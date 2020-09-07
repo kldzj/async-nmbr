@@ -1,0 +1,35 @@
+{
+	"name": "async-nmbr",
+	"version": "1.1.0",
+	"description": "",
+	"main": "src/index.js",
+	"dependencies": {
+		"node-fetch": "^2.6.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.7.4",
+		"@babel/core": "^7.7.4",
+		"babel-plugin-overload": "0.0.2",
+		"babel-template": "^6.26.0"
+	},
+	"scripts": {
+		"test": "npm run build && node lib/test.js",
+		"clean": "rm -rf lib",
+		"build": "babel src -d lib",
+		"prepublish": "npm run clean",
+		"patch": "npm version patch && npm publish",
+		"minor": "npm version minor && npm publish",
+		"major": "npm version major && npm publish",
+		"postpublish": "git push origin master --follow-tags"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/n-kolodziej/async-nmbr.git"
+	},
+	"bugs": {
+		"url": "https://github.com/n-kolodziej/async-nmbr/issues"
+	},
+	"author": "Nikolai Kolodziej",
+	"homepage": "https://nmbr.dev/",
+	"license": "ISC"
+}
